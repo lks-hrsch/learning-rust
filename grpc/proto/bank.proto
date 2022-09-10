@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package bank;
+
+// The book store service definition.
+service Bank {
+  // add a new account
+  rpc AddAccount (AccountRequest) returns (AccountResponse) {}
+
+  // get balance of an account
+  rpc GetBalance (AccountRequest) returns (AccountResponse) {}
+
+  // deposit money to an account
+  rpc Deposit (DepositRequest) returns (AccountResponse) {}
+}
+
+message AccountRequest {
+  int32 id = 1;
+  string name = 2;
+}
+
+message AccountResponse {
+  int32 id = 1;
+  string name = 2;
+  int32 balance = 3;
+}
+
+message DepositRequest {
+  int32 id = 1;
+  int32 amount = 2;
+}

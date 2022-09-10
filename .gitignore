@@ -1,2 +1,9 @@
+# idea files
+.idea/
+
+
+# cargo files
+cargo.lock
+
 # Rust Build files
 target/
